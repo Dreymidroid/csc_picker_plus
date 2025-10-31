@@ -908,7 +908,9 @@ class CSCPickerPlusState extends State<CSCPickerPlus> {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  widget.showStates && widget.showCities
+                  widget.showStates &&
+                              widget.showCities &&
+                              _cities.isNotEmpty
                       ? cityDropdown()
                       : Container()
                 ],
