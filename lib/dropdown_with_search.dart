@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class DropdownWithSearch<T> extends StatelessWidget {
-  final int? padding;
+  final double? padding;
   final String title;
   final String placeHolder;
   final T selected;

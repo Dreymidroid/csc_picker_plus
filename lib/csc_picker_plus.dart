@@ -606,7 +606,7 @@ class CSCPickerPlus extends StatefulWidget {
   final TextStyle? selectedItemStyle, dropdownHeadingStyle, dropdownItemStyle;
   final BoxDecoration? dropdownDecoration, disabledDropdownDecoration;
   final bool showStates, showCities, showCountry;
-  final int padding;
+  final double padding;
   final CountryFlag flagState;
   final Layout layout;
   final double? searchBarRadius;
@@ -923,7 +923,7 @@ class CSCPickerPlusState extends State<CSCPickerPlus> {
   }
 
   ///Country Dropdown Widget
-  Widget countryDropdown([int? padding]) {
+  Widget countryDropdown([double? padding]) {
     return DropdownWithSearch(
       padding: padding,
       title: widget.countryDropdownLabel.tr(widget.countryStateLanguage),
@@ -956,7 +956,7 @@ class CSCPickerPlusState extends State<CSCPickerPlus> {
   }
 
   ///State Dropdown Widget
-  Widget stateDropdown([int? padding]) {
+  Widget stateDropdown([double? padding]) {
     return DropdownWithSearch(
       padding: padding,
       title: widget.stateDropdownLabel.tr(widget.countryStateLanguage),
@@ -987,7 +987,7 @@ class CSCPickerPlusState extends State<CSCPickerPlus> {
   }
 
   ///City Dropdown Widget
-  Widget cityDropdown([int? padding]) {
+  Widget cityDropdown([double? padding]) {
     return DropdownWithSearch(
       padding: padding,
       title: widget.cityDropdownLabel.tr(widget.countryStateLanguage),
