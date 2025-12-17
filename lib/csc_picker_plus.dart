@@ -572,7 +572,9 @@ class CSCPickerPlus extends StatefulWidget {
     this.countryStateLanguage = CountryStateLanguage.englishOrNative,
     this.cityLanguage = CityLanguage.native,
     this.showStates = true,
+    this.showCountry = true,
     this.showCities = true,
+    this.showCountry = true,
     this.defaultCountry,
     this.currentCountry,
     this.currentState,
@@ -603,7 +605,7 @@ class CSCPickerPlus extends StatefulWidget {
   ///Parameters to change style of CSC Picker
   final TextStyle? selectedItemStyle, dropdownHeadingStyle, dropdownItemStyle;
   final BoxDecoration? dropdownDecoration, disabledDropdownDecoration;
-  final bool showStates, showCities;
+  final bool showStates, showCities, showCountry;
   final CountryFlag flagState;
   final Layout layout;
   final double? searchBarRadius;
@@ -878,7 +880,8 @@ class CSCPickerPlusState extends State<CSCPickerPlus> {
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  countryDropdown(),
+                  widget.showCountry ?
+                  countryDropdown():const SizedBox(),
                   widget.showStates
                       ? const SizedBox(height: 10.0)
                       : Container(),
@@ -956,20 +959,20 @@ class CSCPickerPlusState extends State<CSCPickerPlus> {
       title: widget.stateDropdownLabel.tr(widget.countryStateLanguage),
       placeHolder:
           widget.stateSearchPlaceholder.tr(widget.countryStateLanguage),
+      selectedItemStyle: widget.selectedItemStyle,
+      dropdownHeadingStyle: widget.dropdownHeadingStyle,
+      decoration: widget.dropdownDecoration,
+      disabledDecoration: widget.disabledDropdownDecoration,
+      itemStyle: widget.dropdownItemStyle,
       disabled: _statesModels.isEmpty ? true : false,
+      dialogRadius: widget.dropdownDialogRadius,
+      searchBarRadius: widget.searchBarRadius,
+      label: widget.stateSearchPlaceholder.tr(widget.countryStateLanguage),
       items: _statesModels.map((dropDownStringItem) {
         return dropDownStringItem;
       }).toList(),
       isArabic: widget.countryStateLanguage == CountryStateLanguage.arabic,
-      selectedItemStyle: widget.selectedItemStyle,
-      dropdownHeadingStyle: widget.dropdownHeadingStyle,
-      itemStyle: widget.dropdownItemStyle,
-      decoration: widget.dropdownDecoration,
-      dialogRadius: widget.dropdownDialogRadius,
-      searchBarRadius: widget.searchBarRadius,
-      disabledDecoration: widget.disabledDropdownDecoration,
       selected: _selectedState,
-      label: widget.stateSearchPlaceholder.tr(widget.countryStateLanguage),
       //onChanged: (value) => _onSelectedState(value),
       onChanged: (value) {
         //print("stateChanged $value $_selectedState");
