@@ -72,7 +72,7 @@ class DropdownWithSearch<T> extends StatelessWidget {
           });
         },
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: padding ?? 8, vertical: padding ?? 8),
+          padding: EdgeInsets.symmetric(horizontal: padding ?? 8, vertical: padding ?? 8),
           decoration: !disabled
               ? decoration ??
                   BoxDecoration(
