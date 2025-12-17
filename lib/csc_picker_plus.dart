@@ -572,7 +572,6 @@ class CSCPickerPlus extends StatefulWidget {
     this.countryStateLanguage = CountryStateLanguage.englishOrNative,
     this.cityLanguage = CityLanguage.native,
     this.showStates = true,
-    this.showCountry = true,
     this.showCities = true,
     this.showCountry = true,
     this.defaultCountry,
