@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class DropdownWithSearch<T> extends StatelessWidget {
+  final int? padding;
   final String title;
   final String placeHolder;
   final T selected;
@@ -27,6 +28,7 @@ class DropdownWithSearch<T> extends StatelessWidget {
     required this.items,
     required this.selected,
     required this.onChanged,
+    this.padding,
     this.selectedItemPadding,
     this.selectedItemStyle,
     this.dropdownHeadingStyle,
@@ -70,7 +72,7 @@ class DropdownWithSearch<T> extends StatelessWidget {
           });
         },
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: padding ?? 8, vertical: padding ?? 8),
           decoration: !disabled
               ? decoration ??
                   BoxDecoration(
